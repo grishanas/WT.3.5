@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.bsuir.LAB2.API"},{"l":"com.bsuir.LAB2.DAO"},{"l":"com.bsuir.LAB2.Entity"},{"l":"com.bsuir.LAB2.Service"},{"l":"com.bsuir.LAB2.Service.impl"}];updateSearchResults();
