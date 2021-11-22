@@ -34,6 +34,10 @@ public class TabletPC implements IProduct, Serializable {
         return ProductName;
     }
 
+    /**
+     *  Method returns a list of all criteria for the product implemented in the class
+     *  @return Criteria list
+     */
     public ArrayList<String> GetCriteria()
     {
         ArrayList<String> Criteria = new ArrayList<String>();

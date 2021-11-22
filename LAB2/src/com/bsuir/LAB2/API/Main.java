@@ -6,8 +6,15 @@ import com.bsuir.LAB2.Service.impl.ServiceImpl;
 
 import java.util.ArrayList;
 
+/**
+ * main class in the program
+ */
 public class Main {
 
+    /**
+     * program entry
+     * @param args nothing
+     */
     public static void main(String[] args) {
 
         ServiceImpl  serv= new ServiceImpl("");
@@ -34,7 +41,7 @@ public class Main {
 //        serv.SaveProd(prod);
 
 
-        ArrayList<IProduct> Products = serv.Find("Oven","Height");
+        ArrayList<IProduct> Products = serv.Find("Oven","Weight");
 
         if(Products!=null)
         for(IProduct Item:Products)

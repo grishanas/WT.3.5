@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+/**
+ * I have paws.
+ */
 public class Oven implements IProduct, Serializable {
 
     private String ProductName;
@@ -14,6 +17,16 @@ public class Oven implements IProduct, Serializable {
     private float Height;
     private float Width;
 
+    /**
+     *  Constructors
+     * @param ProductName
+     * @param PowerConsumption
+     * @param Weight
+     * @param Capacity
+     * @param Depth
+     * @param Height
+     * @param Width
+     */
     public Oven(String ProductName,int PowerConsumption,float Weight,
                 float Capacity,float Depth,float Height,float Width)
     {
@@ -33,6 +46,10 @@ public class Oven implements IProduct, Serializable {
         return res;
     }
 
+    /**
+     *  Method returns a list of all criteria for the product implemented in the class
+     *  @return Criteria list
+     */
     public ArrayList<String> GetCriteria()
     {
         ArrayList<String> Criteria = new ArrayList<String>();
@@ -49,13 +66,26 @@ public class Oven implements IProduct, Serializable {
 
     public String GetProductName(){return ProductName;}
 
+    /**
+     * return PowerConsumption
+     * @return PowerConsumption
+     */
     public int GetPowerConsumption(){
         return PowerConsumption;
     }
 
+    /**
+     * return Weight
+     * @return Weight
+     */
     public float GetWeight(){
         return Weight;
     }
+
+    /**
+     * return Capacity
+     * @return Capacity
+     */
     public float GetCapacity(){
         return Capacity;
     }

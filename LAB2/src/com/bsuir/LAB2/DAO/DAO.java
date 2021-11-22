@@ -5,18 +5,35 @@ import com.bsuir.LAB2.Entity.IProduct;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ *  Dao creation
+ */
 public final class DAO implements IDAO
 {
 
     private String FileName;
+
+    /**
+     *
+     * @param FileName file name
+     */
     public DAO(String FileName){
         this.FileName=FileName;
     }
+
+    /**
+     *
+     * @return  List of all objects
+     */
     @Override
     public ArrayList<IProduct> GetProduct() {
         return Deserialize(FileName);
     }
 
+    /**
+     *
+     * @param Product list of preserved products
+     */
     @Override
     public void SaveProduct(ArrayList<IProduct> Product) {
         Serialize(FileName,Product);

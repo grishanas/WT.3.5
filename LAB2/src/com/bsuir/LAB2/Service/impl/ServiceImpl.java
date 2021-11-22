@@ -3,7 +3,6 @@ package com.bsuir.LAB2.Service.impl;
 import com.bsuir.LAB2.DAO.DAOFactory;
 import com.bsuir.LAB2.DAO.DAOType;
 import com.bsuir.LAB2.DAO.IDAO;
-import com.bsuir.LAB2.Entity.Criteria.SearchCreteria;
 
 import com.bsuir.LAB2.Entity.IProduct;
 import com.bsuir.LAB2.Service.IService;
@@ -13,6 +12,9 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * interface implementation IService
+ */
 public class ServiceImpl implements IService {
 
     private ArrayList<IProduct> Products;
@@ -22,7 +24,6 @@ public class ServiceImpl implements IService {
     private ArrayList<IProduct> Sort(ArrayList<IProduct> prod,String Criteria)
     {
         ArrayList<IProduct> res= new ArrayList<IProduct>();
-
 
         Method GoalMethod=null;
         Method[] methods= prod.get(0).getClass().getMethods();
@@ -55,6 +56,12 @@ public class ServiceImpl implements IService {
         return res;
     }
 
+    /**
+     *
+     * @param Product product type
+     * @param Criteria type of criterion
+     * @return
+     */
     @Override
     public ArrayList<IProduct> Find(String Product,String Criteria)
     {
@@ -70,15 +77,26 @@ public class ServiceImpl implements IService {
         return sortProd;
     }
 
+    /**
+     * save product to file
+     * @param prod list of products
+     */
     public void SaveProd(ArrayList<IProduct> prod){
       DAO.SaveProduct(prod);
     };
 
+    /**
+     * getting all the products
+     */
     public void GetProduct()
     {
         Products = DAO.GetProduct();
     }
 
+    /**
+     * Creating a connection to the DAO
+     * @param Filename the name of the file in which the goods are stored
+     */
     public ServiceImpl(String Filename)
     {
         this.DAO = DAOFactory.CreateDAO("Product.txt",DAOType.DAO);
